@@ -1,5 +1,6 @@
 h1 {
 	background-color: skyblue;
+    max-height: 100px;
 	text-align: center;
 }
 label {
@@ -22,13 +23,12 @@ label {
 }
 .green{
   background-color: lightgreen;
-  margin: 2px 2px 2px 2px;
 }
 .yellow{
   background-color: yellow;
 }
 .orange{
-  background-color: orange;
+  background-color: rgb(246, 219, 47);
 }
 .red{
   background-color: red;
