@@ -2,8 +2,8 @@ var APIkey = 'bd2e38c24856bab78f633c2c1faaa6da';
 var city = 'United States';
 
 //Grabs the current time and date
-var date = moment().format('dddd, MMMM Do YYYY');
-var dateTime = moment().format('YYYY-MM-DD HH:MM:SS')
+var date = moment().format('MMMM Do YYYY, h:mm:ss a');
+var dateTime = moment().format('MMM Do YY')
 
 var weatherStorage = [];
 //saves the searched cities to local storage allowing you to just point and click later
@@ -62,7 +62,7 @@ function getCurrentWeather() {
 		method: 'GET',
 	}).then(function (response) {
 		$('.cardTodayCityName').text(response.name);
-		$('.cardTodayDate').text(date);
+		$('.cardTodayDate').text(dateTime);
 		//Icons
 		$('.icons').attr('src', `https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`);
 		// Temperature
@@ -148,7 +148,7 @@ function getFiveDayForecast() {
 
 			var divElHeader = $('<div>');
 			divElHeader.attr('class', 'card-header')
-			var m = moment(`${myWeather[i].date}`).format('MM-DD-YYYY');
+			var m = moment(`${myWeather[i].date}`).format('MMM Do YY');
 			divElHeader.text(m);
 			divElCard.append(divElHeader)
 
